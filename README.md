@@ -11,21 +11,24 @@ That's right, AFNET-SSH is one of the few "free" options out there for automated
 * Automatic login with username and password
 * Send commands over SSH and print output to console
 ## Installation
-* Download the AFNET-SSH folder and save it to your PowerShell module directory ($env:PSModulePath).
+* Download the AFNET-SSH folder and save it to your PowerShell module directory (`$env:PSModulePath`).
 * Open a new PowerShell session and run `Import-Module AFNET-SSH`.
 ## Usage
 
 To open an SSH tunnel and send commands, use the `Connect-SSH` function. Here's an example:
 
 powershell
-
-`Connect-SSH -Server 192.168.0.1 -Username admin -Password p@ssw0rd`
+````bash
+> Connect-SSH -Server 192.168.0.1 -Username admin -Password p@ssw0rd
+````
 
 This will open an SSH connection to 192.168.0.1 with the specified username and password. You can then send commands using the `Send-SSHCommand` function:
 
 powershell
 
-`Send-SSHCommand -Command 'ls -la' -Session $Session`
+````bash
+> Send-SSHCommand -Command 'ls -la' -Session $Session
+````
 
 This will send the `ls -la` command to the SSH session `$Session` and print the output to the console.
 
